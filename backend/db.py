@@ -19,4 +19,16 @@ def get_db():
 
 def close_db(error=None):
   db = g.pop("db", None)
-  if db is not None
+  if db is not None:
+    db.close()
+
+
+def init_db():
+  db = get_db()
+  db.executescript(SCHEMA)
+  db.commit()
+
+def init_app(app):
+  app.teardown_appcontext(close_db)
+  with app.app_context():
+    init_db()      
