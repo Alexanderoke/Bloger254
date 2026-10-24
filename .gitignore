@@ -1,0 +1,18 @@
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+# Virtual environments
+venv/
+.venv/
+ENV/
+# Flask local runtime files
+backend/instance/
+backend/instances/
+backend/*.sqlite
+backend/*.db
+# Optional editor noise
+.DS_Store
+Thumbs.db
