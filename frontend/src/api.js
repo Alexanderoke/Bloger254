@@ -40,6 +40,6 @@ export const getPost = (id) => request(`/${id}`);
 
 export const createPost = (post) => request("", "POST", post);
 
-export const updatePost = (id. post) => request(`/${id}`, "PUT", post);
+export const updatePost = (id, post) => request(`/${id}`, "PUT", post);
 
 export const deletePost =(id) => request(`/${id}`, "DELETE");
