@@ -57,6 +57,5 @@ export default function HomePage() {
         <PostCard key={post.id} post={post} />
       ))}
     </section>
-  );
-  
+  );  
 }
