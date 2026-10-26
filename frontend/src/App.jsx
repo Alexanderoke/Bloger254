@@ -1,7 +1,7 @@
 import { Link, Route, Routes} from "react-router-dom";
 import HomePage from "./pages/HomePage.jsx";
 import PostPage from "./pages/PostPage.jsx";
-import EdittorPage from "./pages/EditorPage.jsx";
+import EditorPage from "./pages/EditorPage.jsx";
 
 
 
@@ -20,7 +20,7 @@ export default function App() {
           {/*":id" is a placeholder; /posts/7 gives id = "7" */}
           <Route path="/posts/:id" element={<PostPage/>} />
           <Route path ="/new" element= {<EditorPage />}/>
-          <Route path="/posts/:id/edit" element={<Editopage />} />
+          <Route path="/posts/:id/edit" element={<EditorPage />} />
           {/* "*" matches any address not listed above*/}
           <Route  
           path="*"

@@ -1,4 +1,4 @@
-const BASE = "http://127.0.0.1:5000/pi/posts";
+const BASE = "/api/posts";
 
 
 export class ApiError extends Error{
@@ -12,7 +12,7 @@ async function request(path = "", method = "GET", body) {
   const options = {method};
   if (body !== undefined) {
     options.headers = {"Content-Type": "application/json"};
-    options.body = JSON.stringyfy(body);
+    options.body = JSON.stringify(body);
   }
 
   let res;

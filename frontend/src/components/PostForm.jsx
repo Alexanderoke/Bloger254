@@ -5,7 +5,7 @@ export default function PostForm({ initial, onSubmit, submitLabel}){
   const [title, setTitle] =useState(initial?.title ?? "");
   const [author, setAuthor]=useState(initial?.author ?? "");
   const [content, setContent] =useState(initial?.content ?? "");
-  const [saving, setSaving] = usestate(false);
+  const [saving, setSaving] = useState(false);
   const [fieldErrors, setFieldErrors] = useState({});
   const [error,setError] = useState("");
 
@@ -13,7 +13,7 @@ export default function PostForm({ initial, onSubmit, submitLabel}){
     e.preventDefault();
     setSaving(true);
     setError("");
-    setFielsErrors({});
+    setFieldErrors({});
     try{
       await onSubmit({title, author, content});
     } catch (err) {
@@ -45,6 +45,9 @@ export default function PostForm({ initial, onSubmit, submitLabel}){
           {fieldErrors.content && <span className="field-error">{fieldErrors.content}</span>}
       </label>
       {error && Object.keys(fieldErrors).length === 0 && <p className="error">{error}</p>}
+      <button className="btn" type="submit" disabled={saving}>
+  {saving ? "Saving..." : submitLabel}
+</button>
     </form>
   );
 }

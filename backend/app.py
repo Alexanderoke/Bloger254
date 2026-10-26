@@ -11,7 +11,12 @@ def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         DATABASE=os.path.join(app.instance_path, "blog.sqlite"),
-        CORS_ORIGINS={"http://localhost:5173", "http://127.0.0.1:5173"},
+        CORS_ORIGINS={
+            "http://localhost:55173",
+            "http://127.0.0.1:55173",
+            "http://localhost:55173",
+            "http://127.0.0.1:55173",
+        },
     )
     if test_config:
         app.config.update(test_config)
@@ -31,6 +36,7 @@ def create_app(test_config=None):
             response.headers["Access-Control-Allow-Origin"] = origin
             response.headers["Vary"] = "Origin"
             response.headers["Access-Control-Allow-Headers"] = "Content-Type"
+            response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, PATCH, DELETE, OPTIONS"
         return response
 
     @app.errorhandler(HTTPException)

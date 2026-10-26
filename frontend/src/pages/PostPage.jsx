@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import { Link, useNavigate, useParams } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import {deletePost, getPost } from "../api.js";
 import { formatDate } from "../utils.js";
 
@@ -36,16 +36,17 @@ export default function PostPage() {
   if (error) return <p className="error">{error}<Link to="/">Back to the blog</Link></p>;
   if (!post) return <p className="notice">Loading...</p>;
 
-  const paragraphs = post.content.split(/\ns*\n/);
+  const paragraphs = post.content.split(/\n\s*\n/);
 
   return(
     <article className="post">
       <Link to="/" className="back">&larr; All posts</Link>
-      <h1>{}post.title</h1>
+      <h1>{post.title}</h1>
       <p className="meta">
         By {post.author} &middot; {formatDate(post.created_at)}
-        {post.updated_at !==post.creted_at && <> &middot; edited
-        {formatDate(post.updated_at)}</>}
+        {post.updated_at !== post.created_at && (
+  <> &middot; edited {formatDate(post.updated_at)}</>
+)}
       </p>
 
       <div className="post-body">
