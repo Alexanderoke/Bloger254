@@ -9,14 +9,15 @@ import posts
 
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
+
+    live_origins = {
+        origin.strip()
+        for origin in os.environ.get("FLASK_CORS_ORIGINS", "").split(",")
+        if origin.strip()
+    }
     app.config.from_mapping(
         DATABASE=os.path.join(app.instance_path, "blog.sqlite"),
-        CORS_ORIGINS={
-            "http://localhost:55173",
-            "http://127.0.0.1:55173",
-            "http://localhost:55173",
-            "http://127.0.0.1:55173",
-        },
+        CORS_ORIGINS={"http://localhost:5173", "http://127.0.0.1:5173"} | live_origins,
     )
     if test_config:
         app.config.update(test_config)

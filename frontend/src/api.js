@@ -1,4 +1,8 @@
-const BASE = "/api/posts";
+const API_ORIGIN = (import.meta.env.VITE_API_URL ?? "http://127.0.0.1:5000").replace(/\/$/, "");
+
+
+
+const BASE = `${API_ORIGIN}/api/posts`;
 
 
 export class ApiError extends Error{
