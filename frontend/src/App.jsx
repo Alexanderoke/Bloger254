@@ -1,4 +1,5 @@
 import { Link, Route, Routes} from "react-router-dom";
+import logo from "./assets/logo.svg";
 import HomePage from "./pages/HomePage.jsx";
 import PostPage from "./pages/PostPage.jsx";
 import EditorPage from "./pages/EditorPage.jsx";
@@ -10,7 +11,7 @@ export default function App() {
   return (
     <div className="site">
       <header className="site-header">
-        <Link to="/" className="brand"><img src="../public/src/assets/logo.svg"/></Link>
+        <Link to="/" className="brand"><img src={logo} alt="Oke Blog" /></Link>
         <Link to="/new" className="btn">Write a post</Link>
       </header>
 
