@@ -10,9 +10,14 @@ venv/
 ENV/
 # Flask local runtime files
 backend/instance/
-backend/instances/
 backend/*.sqlite
 backend/*.db
 # Optional editor noise
 .DS_Store
 Thumbs.db
+# Files that must NOT be uploaded to GitHub.
+# Your live data and secrets stay on your machine / the server
+.env
+# Node
+node_modules/
+dist/
