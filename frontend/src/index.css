@@ -11,12 +11,12 @@ a {color: #2457c5;}
 .site{max-width: 720px; margin: 0 auto; padding: 0 16px; min-height: 100vh; display: flex; flex-direction: column;}
 main {flex: 1; padding-bottom: 40px;}
 .site-header {display: flex; justify-content: space-between; align-items: center; padding: 22px 0; border-bottom: 1px solid #e3e0d8; margin-bottom: 24px;}
-.brand { font-family: Georgia, serif;
+/* .brand { font-family: Georgia, serif;
    font-size: 1.6rem;
     font-weight: bold;
      color: #1f2328;
       text-decoration: none;
-    }
+    } */
 
 .site-footer{
 text-align: center;

@@ -10,7 +10,7 @@ export default function App() {
   return (
     <div className="site">
       <header className="site-header">
-        <Link to="/" className="brand">The Blog</Link>
+        <Link to="/" className="brand"><img src="/src/assets/logo.svg"/></Link>
         <Link to="/new" className="btn">Write a post</Link>
       </header>
 
