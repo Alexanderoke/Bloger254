@@ -30,7 +30,7 @@ export default function App() {
           />
         </Routes>          
       </main>
-      <footer className="site-footer">Built with React and Flask</footer>
+      <footer className="site-footer">Built By Alexander William Oke. React & Flask</footer>
     </div>
   );
 }
